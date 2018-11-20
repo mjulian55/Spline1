@@ -1,0 +1,629 @@
+---
+title: "01_24 Splined"
+author: "Maddie Julian"
+date: "November 20, 2018"
+output:
+  html_document: default
+  pdf_document: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+HOUR 1
+```{r echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+library(knitr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X01<- read.csv("~/github/Splining/01.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X01$Hour,y=X01$Elasticity,xout=seq(min(X01$Hour),max(X01$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX01 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+P1 = ggplot() +
+  geom_line(data=XX01,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X01,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
+
+HOUR 2
+```{r  echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X02<- read.csv("~/github/Splining/02.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X02$Hour,y=X02$Elasticity,xout=seq(min(X02$Hour),max(X02$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX02 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+P1 = ggplot() +
+  geom_line(data=XX02,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X02,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
+
+HOUR 3
+```{r  echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X03<- read.csv("~/github/Splining/03.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X03$Hour,y=X03$Elasticity,xout=seq(min(X03$Hour),max(X03$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX03 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+P1 = ggplot() +
+  geom_line(data=XX03,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X03,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
+
+HOUR 4
+```{r  echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X04<- read.csv("~/github/Splining/04.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X04$Hour,y=X04$Elasticity,xout=seq(min(X04$Hour),max(X04$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX04 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+P1 = ggplot() +
+  geom_line(data=XX04,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X04,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
+HOUR 5
+```{r  echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X05<- read.csv("~/github/Splining/05.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X05$Hour,y=X05$Elasticity,xout=seq(min(X05$Hour),max(X05$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX05 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+P1 = ggplot() +
+  geom_line(data=XX05,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X05,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
+
+HOUR 6
+```{r  echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X06<- read.csv("~/github/Splining/06.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X06$Hour,y=X06$Elasticity,xout=seq(min(X06$Hour),max(X06$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX06 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+P1 = ggplot() +
+  geom_line(data=XX06,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X06,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
+
+HOUR 7
+```{r echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X07 <- read_csv("~/github/Splining/07.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X07$Hour,y=X07$Elasticity,xout=seq(min(X07$Hour),max(X07$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX07 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+P1 = ggplot() +
+  geom_line(data=XX07,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X07,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
+
+
+HOUR 8
+```{r  echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X08 <- read_csv("~/github/Splining/08.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X08$Hour,y=X08$Elasticity,xout=seq(min(X08$Hour),max(X08$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX08 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+P1 = ggplot() +
+  geom_line(data=XX08,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X08,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
+
+
+HOUR 9
+```{r echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X09 <- read_csv("~/github/Splining/09.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X09$Hour,y=X09$Elasticity,xout=seq(min(X09$Hour),max(X09$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX09 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+P1 = ggplot() +
+  geom_line(data=XX09,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X09,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
+
+HOUR 10
+```{r echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X10 <- read_csv("~/github/Splining/10.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X10$Hour,y=X10$Elasticity,xout=seq(min(X10$Hour),max(X10$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX10 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+P1 = ggplot() +
+  geom_line(data=XX10,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X10,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
+
+HOUR 11
+```{r echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X11<- read.csv("~/github/Splining/11.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X11$Hour,y=X11$Elasticity,xout=seq(min(X11$Hour),max(X11$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX11 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+P1 = ggplot() +
+  geom_line(data=XX11,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X11,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
+HOUR 12
+```{r echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X12<- read.csv("~/github/Splining/12.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X12$Hour,y=X12$Elasticity,xout=seq(min(X12$Hour),max(X12$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX12 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+P1 = ggplot() +
+  geom_line(data=XX12,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X12,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
+
+HOUR 13
+```{r echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X13<- read.csv("~/github/Splining/13.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X13$Hour,y=X13$Elasticity,xout=seq(min(X13$Hour),max(X13$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX13 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+P1 = ggplot() +
+  geom_line(data=XX13,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X13,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
+HOUR 14
+```{r echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X14<- read.csv("~/github/Splining/14.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X14$Hour,y=X14$Elasticity,xout=seq(min(X14$Hour),max(X14$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX14 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+P1 = ggplot() +
+  geom_line(data=XX14,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X14,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
+
+HOUR 15
+```{r  echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X15<- read.csv("~/github/Splining/15.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X15$Hour,y=X15$Elasticity,xout=seq(min(X15$Hour),max(X15$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX15 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+P1 = ggplot() +
+  geom_line(data=XX15,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X15,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
+
+HOUR 16
+```{r echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X16<- read.csv("~/github/Splining/16.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X16$Hour,y=X16$Elasticity,xout=seq(min(X16$Hour),max(X16$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX16 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+P1 = ggplot() +
+  geom_line(data=XX16,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X16,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
+
+HOUR 17
+```{r echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X17<- read.csv("~/github/Splining/17.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X17$Hour,y=X17$Elasticity,xout=seq(min(X17$Hour),max(X17$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX17 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+P1 = ggplot() +
+  geom_line(data=XX17,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X17,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
+
+HOUR 18
+```{r echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X18<- read.csv("~/github/Splining/18.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X18$Hour,y=X18$Elasticity,xout=seq(min(X18$Hour),max(X18$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX18 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+P1 = ggplot() +
+  geom_line(data=XX18,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X18,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
+
+HOUR 19
+```{r echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X19<- read.csv("~/github/Splining/19.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X19$Hour,y=X19$Elasticity,xout=seq(min(X19$Hour),max(X19$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX19 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+P1 = ggplot() +
+  geom_line(data=XX19,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X19,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
+
+
+HOUR 20
+```{r echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X20<- read.csv("~/github/Splining/20.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X20$Hour,y=X20$Elasticity,xout=seq(min(X20$Hour),max(X20$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX20 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+P1 = ggplot() +
+  geom_line(data=XX20,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X20,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
+
+HOUR 21
+```{r echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X21<- read.csv("~/github/Splining/21.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X21$Hour,y=X21$Elasticity,xout=seq(min(X21$Hour),max(X21$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX21 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+P1 = ggplot() +
+  geom_line(data=XX21,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X21,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
+
+HOUR 22
+```{r echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X22<- read.csv("~/github/Splining/22.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X22$Hour,y=X22$Elasticity,xout=seq(min(X22$Hour),max(X22$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX22 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+P1 = ggplot() +
+  geom_line(data=XX22,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X22,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
+
+HOUR 23
+```{r echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X23<- read.csv("~/github/Splining/23.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X23$Hour,y=X23$Elasticity,xout=seq(min(X23$Hour),max(X23$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX23 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+P1 = ggplot() +
+  geom_line(data=XX23,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X23,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
+
+HOUR 24
+```{r echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X24<- read.csv("~/github/Spline1/24.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X24$Hour,y=X24$Elasticity,xout=seq(min(X24$Hour),max(X24$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX24 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+P1 = ggplot() +
+  geom_line(data=XX24,aes(x=HR24,y=ELAST),size=2,color="blue") +
+  geom_point(data=X24,aes(x=Hour24,y=Elasticity),size=4,color="red")
+
+P1
+```
