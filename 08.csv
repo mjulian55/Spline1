@@ -1,0 +1,6 @@
+﻿Hour for R,Hour,Time,Period,Elasticity
+0,8,8:00AM,OP,-0.19
+2,10,10:00AM,MP,0.07
+7,15,3:00PM,P,0.12
+12.5,20.5,8:30PM,MP,0.07
+24,32,8:00AM,OP,-0.19
