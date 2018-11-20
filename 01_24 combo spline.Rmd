@@ -1,0 +1,235 @@
+---
+title: "1_24 combined"
+author: "Maddie Julian"
+date: "November 20, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+library(knitr)
+
+rm(list = ls()) #This clears the workspace
+
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+X01<- read.csv("~/github/Spline1/01.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X01$Hour,y=X01$Elasticity,xout=seq(min(X01$Hour),max(X01$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX01 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+X02<- read.csv("~/github/Spline1/02.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X02$Hour,y=X02$Elasticity,xout=seq(min(X02$Hour),max(X02$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX02 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+X03<- read.csv("~/github/Spline1/03.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X03$Hour,y=X03$Elasticity,xout=seq(min(X03$Hour),max(X03$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX03 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+X04<- read.csv("~/github/Spline1/04.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X04$Hour,y=X04$Elasticity,xout=seq(min(X04$Hour),max(X04$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX04 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+X05<- read.csv("~/github/Spline1/05.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X05$Hour,y=X05$Elasticity,xout=seq(min(X05$Hour),max(X05$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX05 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+X06<- read.csv("~/github/Spline1/06.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X06$Hour,y=X06$Elasticity,xout=seq(min(X06$Hour),max(X06$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX06 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+X07 <- read_csv("~/github/Spline1/07.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X07$Hour,y=X07$Elasticity,xout=seq(min(X07$Hour),max(X07$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX07 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+X08 <- read_csv("~/github/Spline1/08.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X08$Hour,y=X08$Elasticity,xout=seq(min(X08$Hour),max(X08$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX08 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+X09 <- read_csv("~/github/Spline1/09.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X09$Hour,y=X09$Elasticity,xout=seq(min(X09$Hour),max(X09$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX09 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+X10 <- read_csv("~/github/Spline1/10.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X10$Hour,y=X10$Elasticity,xout=seq(min(X10$Hour),max(X10$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX10 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+X11<- read.csv("~/github/Spline1/11.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X11$Hour,y=X11$Elasticity,xout=seq(min(X11$Hour),max(X11$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX11 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+X12<- read.csv("~/github/Spline1/12.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X12$Hour,y=X12$Elasticity,xout=seq(min(X12$Hour),max(X12$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX12 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+X13<- read.csv("~/github/Spline1/13.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X13$Hour,y=X13$Elasticity,xout=seq(min(X13$Hour),max(X13$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX13 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+
+X14<- read.csv("~/github/Spline1/14.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X14$Hour,y=X14$Elasticity,xout=seq(min(X14$Hour),max(X14$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX14 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+X15<- read.csv("~/github/Spline1/15.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X15$Hour,y=X15$Elasticity,xout=seq(min(X15$Hour),max(X15$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX15 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+X16<- read.csv("~/github/Spline1/16.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X16$Hour,y=X16$Elasticity,xout=seq(min(X16$Hour),max(X16$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX16 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+X17<- read.csv("~/github/Spline1/17.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X17$Hour,y=X17$Elasticity,xout=seq(min(X17$Hour),max(X17$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX17 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+X18<- read.csv("~/github/Spline1/18.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X18$Hour,y=X18$Elasticity,xout=seq(min(X18$Hour),max(X18$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX18 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+X19<- read.csv("~/github/Spline1/19.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X19$Hour,y=X19$Elasticity,xout=seq(min(X19$Hour),max(X19$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX19 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+X20<- read.csv("~/github/Spline1/20.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X20$Hour,y=X20$Elasticity,xout=seq(min(X20$Hour),max(X20$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX20 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+X21<- read.csv("~/github/Spline1/21.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X21$Hour,y=X21$Elasticity,xout=seq(min(X21$Hour),max(X21$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX21 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+
+X22<- read.csv("~/github/Spline1/22.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X22$Hour,y=X22$Elasticity,xout=seq(min(X22$Hour),max(X22$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX22 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+X23<- read.csv("~/github/Spline1/23.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X23$Hour,y=X23$Elasticity,xout=seq(min(X23$Hour),max(X23$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX23 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+
+X24<- read.csv("~/github/Spline1/24.csv") %>%
+  mutate(Hour24 = ifelse(Hour<=24,Hour,Hour-24))
+Y = spline(x=X24$Hour,y=X24$Elasticity,xout=seq(min(X24$Hour),max(X24$Hour)))
+HR = Y$x
+ELAST = Y$y
+XX24 = data.frame(HR=HR,ELAST=ELAST) %>%
+  mutate(HR24 = ifelse(HR<=24,HR,HR-24))
+
+
+
+P1 = ggplot() +
+  geom_line(data=XX01+XX02+XX03+XX04+XX05+XX06+XX07+XX08+XX09+XX10+XX11+XX12+XX13+XX14+XX15+XX16+XX17+XX18+XX19+XX20+XX21+XX22+XX23,aes(x=HR24,y=ELAST),size=2,color="blue") 
+
+P1
+```
